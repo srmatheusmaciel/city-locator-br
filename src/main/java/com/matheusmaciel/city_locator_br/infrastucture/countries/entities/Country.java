@@ -1,4 +1,4 @@
-package com.matheusmaciel.city_locator_br.infrastucture.entities;
+package com.matheusmaciel.city_locator_br.infrastucture.countries.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

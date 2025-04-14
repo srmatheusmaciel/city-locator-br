@@ -1,7 +1,7 @@
-package com.matheusmaciel.city_locator_br.infrastucture.resources;
+package com.matheusmaciel.city_locator_br.infrastucture.countries.resources;
 
-import com.matheusmaciel.city_locator_br.infrastucture.entities.Country;
-import com.matheusmaciel.city_locator_br.infrastucture.repositories.CountryRepository;
+import com.matheusmaciel.city_locator_br.infrastucture.countries.entities.Country;
+import com.matheusmaciel.city_locator_br.infrastucture.countries.repositories.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,8 +14,12 @@ import java.util.Optional;
 @RequestMapping("/countries")
 public class CountryResource {
 
-    @Autowired
-    private CountryRepository countryRepository;
+
+    private final CountryRepository countryRepository;
+
+    public CountryResource(CountryRepository countryRepository) {
+        this.countryRepository = countryRepository;
+    }
 
     @GetMapping
     public Page<Country> countries(Pageable page){
