@@ -3,10 +3,12 @@ package com.matheusmaciel.city_locator_br.infrastucture.resources;
 import com.matheusmaciel.city_locator_br.infrastucture.entities.Country;
 import com.matheusmaciel.city_locator_br.infrastucture.repositories.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/countries")
@@ -16,14 +18,20 @@ public class CountryResource {
     private CountryRepository countryRepository;
 
     @GetMapping
-    public List<Country> getCountries() {
-        return countryRepository.findAll();
+    public Page<Country> countries(Pageable page){
+        return countryRepository.findAll(page);
     }
 
-    @GetMapping("/code")
-    public ResponseEntity<List<Country>> getCountriesByCode(@RequestParam String code) {
-        var countries = countryRepository.findByCode(code);
-        return ResponseEntity.ok().body(countries);
+    @GetMapping("/{id}")
+    public ResponseEntity getCountryById(@PathVariable Long id) {
+        Optional<Country> country = countryRepository.findById(id);
+
+        if(country.isPresent()){
+            return ResponseEntity.ok().body(country.get());
+        } else{
+            return ResponseEntity.notFound().build();
+        }
+
     }
 
 
