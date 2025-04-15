@@ -2,6 +2,7 @@ package com.matheusmaciel.city_locator_br.infrastucture.staties.resources;
 
 import com.matheusmaciel.city_locator_br.infrastucture.staties.entities.State;
 import com.matheusmaciel.city_locator_br.infrastucture.staties.repositories.StateRepository;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +18,7 @@ public class StateResource {
         this.stateRepository = stateRepository;
     }
 
+    @GetMapping
     public List<State> staties() {
         return stateRepository.findAll();
     }

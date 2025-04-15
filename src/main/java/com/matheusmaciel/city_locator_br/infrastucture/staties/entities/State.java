@@ -1,5 +1,6 @@
 package com.matheusmaciel.city_locator_br.infrastucture.staties.entities;
 
+import com.matheusmaciel.city_locator_br.infrastucture.countries.entities.Country;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -23,13 +24,13 @@ public class State {
     private Integer ibge;
 
         // 1st
-      @Column(name = "pais")
-      private Integer countryId;
+//      @Column(name = "pais")
+//      private Integer countryId;
 
     // 2nd - @ManyToOne
-//    @ManyToOne
-//    @JoinColumn(name = "pais", referencedColumnName = "id")
-//    private Country country;
+    @ManyToOne
+    @JoinColumn(name = "pais", referencedColumnName = "id")
+    private Country country;
 
     @Type(JsonBinaryType.class)
     @Basic(fetch = FetchType.LAZY)
