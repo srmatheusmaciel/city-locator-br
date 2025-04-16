@@ -26,8 +26,8 @@ public class City {
     private Integer ibge;
 
     // 1st
-    @Column(name = "lat_lon")
-    private String geolocation;
+//    @Column(name = "lat_lon")
+//    private String geolocation;
 
     // 2nd
     @Convert(converter = PointConverter.class)
