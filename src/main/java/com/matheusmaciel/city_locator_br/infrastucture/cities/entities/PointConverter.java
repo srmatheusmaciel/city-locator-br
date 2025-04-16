@@ -18,7 +18,7 @@ public class PointConverter implements AttributeConverter<Point, String> {
         if (dbData == null || dbData.isBlank()) return null;
 
         try {
-            // Remove os parênteses, se existirem
+
             dbData = dbData.replace("(", "").replace(")", "");
             String[] parts = dbData.split(",");
             double x = Double.parseDouble(parts[0]); // longitude
