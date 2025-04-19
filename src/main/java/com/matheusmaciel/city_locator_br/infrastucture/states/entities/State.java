@@ -1,4 +1,4 @@
-package com.matheusmaciel.city_locator_br.infrastucture.staties.entities;
+package com.matheusmaciel.city_locator_br.infrastucture.states.entities;
 
 import com.matheusmaciel.city_locator_br.infrastucture.countries.entities.Country;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
