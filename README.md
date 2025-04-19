@@ -161,4 +161,4 @@ To download the Google Checkstyle configuration file:
 wget https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/google_checks.xml
 ```
 
-licença MIT
+Licença MIT

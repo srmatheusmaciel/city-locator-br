@@ -1,4 +1,4 @@
-package com.matheusmaciel.city_locator_br.infrastucture.cities.services;
+package com.matheusmaciel.city_locator_br.infrastucture.distances.services;
 
 
 import static java.lang.Math.atan2;

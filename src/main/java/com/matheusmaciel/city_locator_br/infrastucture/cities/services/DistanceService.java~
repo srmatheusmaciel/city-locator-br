@@ -1,4 +1,0 @@
-package com.matheusmaciel.city_locator_br.infrastucture.cities.services;
-
-public class DistanceService {
-}
